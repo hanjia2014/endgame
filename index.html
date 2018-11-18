@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<header>
+    <link rel="stylesheet" href="lib/bootstrap.min.css" />
+</header>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <input type="button" value="Refresh" onclick="refreshTable()" />
+            <table id="excel-table" class="table">
+            </table>
+        </div>
+    </div>
+
+
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="src/config.js"></script>
+    <script src="src/init.js"></script>
+    <script src="src/computing.js"></script>
+    <script src="src/store.js"></script>
+    <script src="src/table.js"></script>
+    <script src="src/main.js"></script>
+    <script>
+        var tableId = '#excel-table';
+        $(document).ready(function () {
+            App.init(tableId);
+        });
+        function refreshTable() {
+            App.reload(tableId);
+        }
+    </script>
+</body>
+</html>
